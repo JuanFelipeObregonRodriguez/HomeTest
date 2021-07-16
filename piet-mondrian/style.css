@@ -1,0 +1,234 @@
+:root {
+    --gray-light: #dddcdc;
+    --gray-color: #98989b;
+    --black-color: #0c0c0a;
+    --blue-color: #122e41;
+    --orange-color: #cc3614;
+    --yellow-color: #ddb515;
+}
+
+body {
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    height: 100vh;
+    padding: 0 2rem;
+}
+
+main {
+    text-align: center;
+}
+
+.title {
+    font-size: 20px;
+    margin-top: 2.5rem;
+}
+
+.lines {
+    display: inline-grid;
+    grid-template-columns: [col1] 4rem [col2] 3rem [col3] 7rem [col4] 5rem [col5] 5rem [col6] 1.5rem;
+    grid-template-rows: [row1] .5rem [row2] 3rem [row3] 4rem [row4] 5rem [row5] 4rem [row6] 4rem [row7] 4.5rem [row8] 1.5rem;
+    border: 4px solid #fff;
+    outline: 1px solid var(--black-color);
+    margin: 7rem auto 0 auto;
+    width: auto
+}
+
+.line {
+    border: 1px solid #000;
+    text-indent: -9999px
+}
+
+/*background*/
+.line-1, .line-3, .line-4, .line-20, .line-27 {
+    background-color: var(--gray-light)
+}
+
+.line-2, .line-7, .line-15, .line-16, .line-17, .line-23 {
+    background-color: var(--gray-color)
+}
+
+.line-5, .line-9, .line-11, .line-22, .line-28 {
+    background-color: var(--black-color)
+}
+
+.line-6, .line-10, .line-13, .line-24 {
+    background-color: var(--blue-color)
+}
+
+.line-8, .line-14, .line-19, .line-25 {
+    background-color: var(--orange-color)
+}
+
+.line-12, .line-18, .line-21, .line-26 {
+    background-color: var(--yellow-color)
+}
+
+/*rows and cols positions*/
+
+/*rows*/
+
+.line-1, .line-2 {
+    grid-row-start: row1;
+    grid-row-end: row2
+}
+
+.line-4 {
+    grid-row-start: row2;
+    grid-row-end: span row5
+}
+
+.line-5, .line-6 {
+    grid-row-start: row2;
+    grid-row-end: row3
+}
+
+
+.line-7, .line-8, .line-9, .line-10 {
+    grid-row-start: row3;
+    grid-row-end: row4
+}
+
+.line-11, .line-12 {
+    grid-row-start: row4;
+    grid-row-end: row5
+}
+
+.line-13, .line-14 {
+    grid-row-start: row4;
+    grid-row-end: span row6
+}
+
+.line-16, .line-17 {
+    grid-row-start: row5;
+    grid-row-end: span row8
+}
+
+.line-18 {
+    grid-row-start: row5;
+    grid-row-end: row6
+}
+
+.line-19, .line-20, .line-21 {
+    grid-row-start: row6;
+    grid-row-end: row7
+}
+
+.line-22, .line-23, .line-24 {
+    grid-row-start: row7;
+    grid-row-end: row8
+}
+
+.line-26, .line-27, .line-28 {
+    grid-row-start: row8;
+    grid-row-end: end
+}
+
+/*cols*/
+
+.line-1, .line-4, .line-16 {
+    grid-column-start: col1;
+    grid-column-end: col2
+}
+
+.line-2 {
+    grid-column-start: col2;
+    grid-column-end: span col5
+}
+
+.line-3 {
+    grid-column-start: col5;
+    grid-column-end: span end;
+    grid-row-start: row1;
+    grid-row-end: span row3
+}
+
+.line-5, .line-11, .line-17 {
+    grid-column-start: col2;
+    grid-column-end: col3
+}
+
+.line-6, .line-27 {
+    grid-column-start: col3;
+    grid-column-end: span col5
+}
+
+.line-7 {
+    grid-column-start: col2;
+    grid-column-end: span col4
+}
+
+.line-8, .line-13, .line-20, .line-23 {
+    grid-column-start: col4;
+    grid-column-end: col5
+}
+
+.line-9, .line-14, .line-21, .line-24, .line-28 {
+    grid-column-start: col5;
+    grid-column-end: col6
+}
+
+.line-10 {
+    grid-column-start: col6;
+    grid-column-end: end
+}
+
+.line-12, .line-18, .line-19, .line-22 {
+    grid-column-start: col3;
+    grid-column-end: col4
+}
+
+.line-15 {
+    grid-column-start: col6;
+    grid-column-end: end;
+    grid-row-start: row4;
+    grid-row-end: span row7
+}
+
+.line-25 {
+    grid-column-start: col6;
+    grid-column-end: end;
+    grid-row-start: row7;
+    grid-row-end: span end
+}
+
+.line-26 {
+    grid-column-start: col1;
+    grid-column-end: span col3
+}
+
+@media (max-width: 600px) {
+    .line {
+        align-items: center;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .line {
+        width: 100%;
+    }
+
+    .line-1, .line-3, .line-4, .line-20, .line-27 {
+        order: 1;
+    }
+
+    .line-2, .line-7, .line-15, .line-16, .line-17, .line-23 {
+        order: 2;
+    }
+
+    .line-5, .line-9, .line-11, .line-22, .line-28 {
+        order: 3;
+    }
+
+    .line-6, .line-10, .line-13, .line-24 {
+        order: 4;
+    }
+
+    .line-12, .line-18, .line-21, .line-26 {
+        order: 5;
+    }
+
+    .line-8, .line-14, .line-19, .line-25 {
+        order: 6;
+    }
+}
